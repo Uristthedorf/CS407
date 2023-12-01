@@ -139,16 +139,19 @@ modulate = Color(1, 0, 0, 1)
 shape = SubResource("RectangleShape2D_k48cb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
 
 [node name="CameraTargeter" type="Node" parent="Camera2D"]
 script = ExtResource("8_gyc27")
+max_zoom = 2.0
 targets = Array[NodePath]([NodePath("../../CharacterBody2D")])
 
 [node name="CameraShaker" type="Node" parent="Camera2D"]
 script = ExtResource("18_7yvpt")
-max_offset = Vector2(20, 20)
+decay_rate = 3
+max_offset = Vector2(10, 10)
 max_roll = 0.01
-power = 1.0
+power = 0.5
 
 [node name="HitBox" type="Area2D" parent="."]
 position = Vector2(979, 371)
